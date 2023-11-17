@@ -1,12 +1,23 @@
-const express=require('express');
-const app=express();
-const port=5000;
-const Mongodb=require('./db');
+const express = require("express");
+const app = express();
+const port = 5000;
+const Mongodb = require("./db");
 Mongodb();
-
-app.get('/',(req,res)=>{
-    res.send('Hello World!');
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin,X-Requested-With, Content-Type, Accept"
+  );
+  next();
 });
-app.listen(port,()=>{
-    console.log(`Server is running on port ${port}`);
+app.use(express.json());
+// app.get("/", (req, res) => {
+//   res.send("Hello World");
+// });
+app.use("/api/notes", require("./Routes/NewNotes"));
+app.use("/api/createuser", require("./Routes/CreateUser"));
+app.use("/api", require("./Routes/SearchData"));
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

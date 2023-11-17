@@ -1,24 +1,26 @@
-const mongoose=require('mongoose');
+const mongoose = require("mongoose");
 
-const {Schema}=mongoose;
+const { Schema } = mongoose;
 
-const noteSchema=new Schema({
-    title:{
-        type:String,
-        required:true
-    },
-    // description:{
-    //     type:String,
-    //     required:true
-    // },
-    // tag:{
-    //     type:String,
-    //     default:"General"
-    // },
-    date:{
-        type:Date,
-        default:Date.now
-    }
+const noteSchema = new Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  tag: {
+    type: String,
+  },
+  link: {
+    type: String,
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-module.exports=mongoose.model('Theory of Computation',noteSchema);
+module.exports = mongoose.model("notes", noteSchema);
