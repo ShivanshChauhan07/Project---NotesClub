@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Data from "../assets/Data";
-import { SearchResultList } from "./SearchResultList";
+import Data from "../../assets/Data";
+import { SearchResultList } from "../Search/SearchResultList";
 
 const Body = () => {
   const [search, setSearch] = useState("");
@@ -30,8 +30,8 @@ const Body = () => {
             value={search}
             onChange={handleChange}
           />
+          <SearchResultList result={result} />
         </div>
-        <SearchResultList result={result} />
       </section>
     </>
   );

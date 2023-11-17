@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Header from "./Header";
+import Header from "../Front/Header";
 export const Notes = () => {
   const { name } = useParams();
   const [notesData, setNotesData] = useState([]);
