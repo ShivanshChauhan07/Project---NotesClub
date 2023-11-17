@@ -6,7 +6,7 @@ const Header = () => {
       <div className="logo my-4">
         <h1 className="px-2 text-3xl font-semibold ">NotesClub</h1>
       </div>
-      <div className="options h-14 my-auto text-md font-normal  tracking-wider">
+      <div className="options h-14 my-auto text-md font-normal  tracking-wide">
         <ul className="flex p-4 ">
           <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
             Home
