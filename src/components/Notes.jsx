@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import Header from "./Header";
 export const Notes = () => {
   const { name } = useParams();
   const [notesData, setNotesData] = useState([]);
@@ -22,14 +22,18 @@ export const Notes = () => {
   }, [name]);
   return (
     <div>
-      {notesData.map((note) => {
-        return (
-          <div key={note._id} className="notes">
-            <h2>{note.title}</h2>
-            <p>{note.description}</p>
-          </div>
-        );
-      })}
+      <Header />
+      <div className="flex">
+        {notesData.map((note) => {
+          return (
+            <div key={note._id} className="h-2/6 w-2/5">
+              <h2>Title {note.title}</h2>
+              <p>Description {note.description}</p>
+              <p>Uploaded On {note.date.slice(0, 10)}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
