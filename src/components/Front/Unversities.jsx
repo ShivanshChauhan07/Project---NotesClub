@@ -3,7 +3,7 @@ import React from "react";
 const Unversities = () => {
   return (
     <>
-      <section className="text-center mt-28 p-20 bg-[#f5f5f5]">
+      <section className="text-center mt-40 p-20 bg-[#f5f5f5]">
         <h1 className="mb-16 font-rob font-semibold text-5xl">Universities</h1>
         <div className=" flex justify-evenly  p-4">
           <div>
