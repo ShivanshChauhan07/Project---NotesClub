@@ -17,7 +17,7 @@ const Body = () => {
   return (
     <>
       <section className="text-center">
-        <div className="p-16">
+        <div className="pt-16 pb-6">
           <img
             className="rounded-full h-24 w-24 mx-auto mb-4"
             src="/src/assets/logo.jpg"
