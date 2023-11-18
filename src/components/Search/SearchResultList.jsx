@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { SearchResult } from "./SearchResult";
 
 export const SearchResultList = ({ result, search }) => {
-  const [visible, setVisible] = useState(false);
   const [title, setTitle] = useState("");
 
   return search !== "" ? (
@@ -14,16 +13,14 @@ export const SearchResultList = ({ result, search }) => {
               className="border-[1px] rounded-sm border-slate-800 text-left p-1 px-3 hover:cursor-pointer"
               key={index}
               onClick={() => {
-                setVisible(true);
                 setTitle(title);
               }}
             >
-              {title}
+              <SearchResult url={title} />
             </li>
           );
         })}
       </ul>
-      {visible && <SearchResult url={title} />}
     </div>
   ) : null;
 };
