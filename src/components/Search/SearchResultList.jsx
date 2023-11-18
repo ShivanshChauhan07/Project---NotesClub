@@ -5,7 +5,7 @@ export const SearchResultList = ({ result, search }) => {
   const [title, setTitle] = useState("");
 
   return search !== "" ? (
-    <div className="h-24 w-2/5 mx-auto absolute left-[455px] overflow-auto">
+    <div className="h-[150px] w-2/5 mx-auto absolute left-[455px] overflow-auto">
       <ul>
         {result.map((title, index) => {
           return (
