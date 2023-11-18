@@ -34,7 +34,7 @@ const Body = () => {
             value={search}
             onChange={handleChange}
           />
-          <SearchResultList result={result} />
+          <SearchResultList result={result} search={search} />
         </div>
       </section>
     </>
