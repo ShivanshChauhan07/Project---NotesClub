@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Notes = require("../Notes");
+const Notes = require("../modal/Notes");
 
 router.post("/", (req, res) => {
   console.log(req.body);

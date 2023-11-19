@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/notes/:name" element={<Notes />} />
-          <Route path="/Contribute" element={<Contribute />} />
+          <Route path="/contribute" element={<Contribute />} />
         </Routes>
       </BrowserRouter>
     </>

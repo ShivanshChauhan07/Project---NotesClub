@@ -1,18 +1,39 @@
 import React, { useState } from "react";
-import { Form } from "react-router-dom";
+import { Form, json } from "react-router-dom";
 import Data from "../../assets/Data";
-
+import { createRef } from "react";
 export const Contribute = () => {
-  const [formData, setFormData] = useState({
+  const fileInput = createRef();
+  const [userData, setUserData] = useState({
     name: "",
     email: "",
     university: "",
     branch: "",
     subject: "",
   });
-  const handleSubmit = () => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.set("avatar", fileInput.current.files[0]);
+    formData.set("uploadUser", JSON.stringify(userData));
+    console.log(formData);
+    try {
+      const resposnse = await fetch("http://localhost:5000/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await resposnse.json();
+      if (resposnse.ok) {
+        alert("file uploaded");
+      } else {
+        console.log("some error occur");
+      }
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setUserData({ ...userData, [e.target.name]: e.target.value });
   };
   return (
     <div className="flex justify-center">
@@ -54,6 +75,8 @@ export const Contribute = () => {
             );
           })}
         </select>
+        <input type="file" name="avatar" ref={fileInput} />
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
