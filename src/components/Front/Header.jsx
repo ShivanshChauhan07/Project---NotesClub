@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -9,7 +10,7 @@ const Header = () => {
       <div className="options h-14 my-auto text-md font-normal  tracking-wide">
         <ul className="flex p-4 ">
           <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
-            Home
+            <Link to={"/"}>Home</Link>
           </li>
           <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
             DashBoard
