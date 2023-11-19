@@ -21,7 +21,7 @@ const Unversities = () => {
           <div className="w-max mx-auto text-center">
             {" "}
             <img
-              className="h-[150px] w-[170px] mx-auto hover:cursor-pointer"
+              className="h-[150px] w-[170px] mx-auto rounded-full hover:cursor-pointer"
               src="/src/assets/logo2.png"
               alt=""
             />
