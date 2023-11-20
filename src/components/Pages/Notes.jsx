@@ -27,12 +27,6 @@ export const Notes = () => {
     <Shimmer />
   ) : (
     <div>
-<<<<<<< HEAD
-      <Link to={"/Contribute"}>Contribute</Link>
-      <div className="flex">
-        {notesData.map((note) => {
-=======
-      <Header />
       <div className="flex justify-between px-24 mt-6">
         <button className="border-2 border-green-500 p-2 bg-green-500 text-white rounded-md w-40 shadow-md shadow-slate-600">
           Contribute
@@ -52,7 +46,6 @@ export const Notes = () => {
       </div>
       <div className=" flex flex-wrap justify-evenly gap-5 content-evenly my-10 ">
         {notesData.map((note, index) => {
->>>>>>> 74b16b1414a15c9f11b6bbce435661d54b730db1
           return (
             index > 1 && (
               <Cards key={note.documents__data__document_id} note={note} />
