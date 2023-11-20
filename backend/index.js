@@ -1,15 +1,9 @@
 const express = require("express");
 const app = express();
 const port = 5000;
-const Mongodb = require("./db");
-const cloudinary = require("cloudinary");
+const Mongodb = require("./utils/db");
 Mongodb();
 
-cloudinary.v2.config({
-  cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
-  api_key: process.env.CLOUDINARY_CLIENT_API,
-  api_secret: process.env.CLOUDINARY_CLIENT_SECRET,
-});
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.header(
