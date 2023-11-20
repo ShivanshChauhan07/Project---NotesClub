@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "../Front/Header";
 import Cards from "./Cards";
+import Shimmer from "../Front/Shimmer";
 export const Notes = () => {
   const { name } = useParams();
   const [notesData, setNotesData] = useState([]);
@@ -22,7 +23,9 @@ export const Notes = () => {
   useEffect(() => {
     loadData();
   }, [name]);
-  return (
+  return notesData.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div>
       <Header />
       <button className="border-2 border-slate-100 p-3 bg-green-500 text-white rounded-md">
