@@ -1,7 +1,10 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const { loginWithRedirect } = useAuth0();
+  const { logout, isAuthenticated, user } = useAuth0();
   return (
     <div className="header flex h-16  shadow-xl bg-[#343a40] text-white">
       <div className="logo my-4">
@@ -39,9 +42,31 @@ const Header = () => {
           placeholder="Search Subject..."
         />
       </div>
-      <div className="my-auto ml-5 px-2">
-        <h1>Login/Signup</h1>
-      </div>
+      {isAuthenticated && (
+        <div className="flex content-center ml-3 px-1">
+          {" "}
+          <img
+            className="rounded-full h-9 w-9 my-auto"
+            src={user.picture}
+            alt=""
+          />
+        </div>
+      )}
+      {isAuthenticated ? (
+        <div className="my-auto ml-2 px-2">
+          <button
+            onClick={() =>
+              logout({ logoutParams: { returnTo: window.location.origin } })
+            }
+          >
+            Log Out
+          </button>
+        </div>
+      ) : (
+        <div className="my-auto ml-5 px-2">
+          <button onClick={() => loginWithRedirect()}>Login/Sign Up</button>
+        </div>
+      )}
     </div>
   );
 };

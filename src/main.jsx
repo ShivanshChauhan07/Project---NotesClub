@@ -10,6 +10,7 @@ import { Contribute } from "./components/Pages/Contribute.jsx";
 import { Home } from "./components/Pages/Home.jsx";
 import About from "./components/Front/About.jsx";
 import Contact from "./components/Front/Contact.jsx";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 const AppLayout = () => {
   return (
@@ -51,4 +52,14 @@ const appRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <Auth0Provider
+    domain="dev-0zl2yx0frsm3mmws.us.auth0.com"
+    clientId="lGjaeq4q0bRjkoqmfjmqxU2pEUd8XnX3"
+    authorizationParams={{
+      redirect_uri: window.location.origin,
+    }}
+  >
+    <RouterProvider router={appRouter} />
+  </Auth0Provider>
+);
