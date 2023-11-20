@@ -28,9 +28,23 @@ export const Notes = () => {
   ) : (
     <div>
       <Header />
-      <button className="border-2 border-slate-100 p-3 bg-green-500 text-white rounded-md">
-        Contribute
-      </button>
+      <div className="flex justify-between px-24 mt-6">
+        <button className="border-2 border-green-500 p-2 bg-green-500 text-white rounded-md w-40 shadow-md shadow-slate-600">
+          Contribute
+        </button>
+        <form action="">
+          <select
+            name="list"
+            className=" shadow-md shadow-slate-400 p-2 w-44 rounded-md"
+          >
+            <option value="ALL">All</option>
+            <option value="Ebooks">Ebooks</option>
+            <option value="Notes">Notes</option>
+            <option value="Practicals">Practicals</option>
+            <option value="PYQ's">PYQ's</option>
+          </select>
+        </form>
+      </div>
       <div className=" flex flex-wrap justify-evenly gap-5 content-evenly my-10 ">
         {notesData.map((note, index) => {
           return (
