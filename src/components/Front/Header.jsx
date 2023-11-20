@@ -25,10 +25,10 @@ const Header = () => {
             Top Contributors
           </li>
           <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
-            Contact Us
+            <Link to={"/contact"}>Contact Us</Link>
           </li>
           <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
-            About Us
+            <Link to={"/about"}>About Us</Link>
           </li>
         </ul>
       </div>

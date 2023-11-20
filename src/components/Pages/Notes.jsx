@@ -22,7 +22,6 @@ export const Notes = () => {
   }, [name]);
   return (
     <div>
-      <Header />
       <Link to={"/Contribute"}>Contribute</Link>
       <div className="flex">
         {notesData.map((note) => {
