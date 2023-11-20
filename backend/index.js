@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
 const port = 5000;
-const Mongodb = require("./db");
+const Mongodb = require("./utils/db");
 Mongodb();
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.header(

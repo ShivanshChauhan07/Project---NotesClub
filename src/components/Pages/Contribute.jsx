@@ -36,36 +36,54 @@ export const Contribute = () => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
   return (
-    <div className="flex justify-center">
-      <form className="flex flex-col h-3/5 w-2/4" onSubmit={handleSubmit}>
+    <div className=" rounded-md text-center my-44 w-1/2 mx-auto shadow-xl shadow-slate-700">
+      <h1 className="font-rob font-semibold p-3 text-4xl text-slate-600 w-max mx-auto">
+        UPLOAD FILES
+      </h1>
+      <form
+        className="flex flex-col space-y-4 h-3/5 w-2/4 mx-auto"
+        onSubmit={handleSubmit}
+      >
         <input
           type="text"
           name="name"
-          className="border"
+          className="rounded-md h-12 shadow-md shadow-slate-300"
           placeholder="Enter Name"
           onChange={handleChange}
         />
         <input
           type="text"
           name="email"
-          className="border"
+          className="rounded-md h-12 shadow-md shadow-slate-300"
           placeholder="Enter Email"
           onChange={handleChange}
         />
-        <select name="university" onChange={handleChange}>
+        <select
+          name="university"
+          onChange={handleChange}
+          className="rounded-md h-12 shadow-md shadow-slate-300"
+        >
           <option selected>Select University</option>
           <option value="ipu">ipu</option>
           <option value="aktu">aktu</option>
           <option value="igdtu">igdtu</option>
         </select>
-        <select name="branch" onChange={handleChange}>
+        <select
+          name="branch"
+          onChange={handleChange}
+          className="rounded-md h-12 shadow-md shadow-slate-300"
+        >
           <option selected>Select Branch</option>
           <option value="cs">cs</option>
           <option value="it">it</option>
           <option value="ece">ece</option>
           <option value="eee">eee</option>
         </select>
-        <select name="subject" onChange={handleChange}>
+        <select
+          name="subject"
+          className="rounded-md h-12 shadow-md shadow-slate-300"
+          onChange={handleChange}
+        >
           <option selected>Select Subject</option>
           {Data.map((single, id) => {
             return (
@@ -75,11 +93,23 @@ export const Contribute = () => {
             );
           })}
         </select>
-        <input type="file" name="avatar" ref={fileInput} />
-        <button>
-          <Link to={"/"}>Cancel</Link>
-        </button>
-        <button type="submit">Submit</button>
+        <input
+          className="rounded-md "
+          type="file"
+          name="avatar"
+          ref={fileInput}
+        />
+        <div className="flex justify-between p-2">
+          <button className="bg-red-500 p-1 w-28 text-white text-lg font-semibold rounded-md ">
+            <Link to={"/"}>Cancel</Link>
+          </button>
+          <button
+            className="bg-green-500 p-1 w-28 text-white text-lg font-semibold rounded-md "
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );
