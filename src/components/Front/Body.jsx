@@ -17,10 +17,14 @@ const Body = () => {
   return (
     <>
       <section className="text-center">
-        <div className="p-16">
-          <img src="" alt="logo" />
-          <h1 className="font-rob font-bold text-3xl">NotesClub</h1>
-          <h5>A Study Material Sharing Platform</h5>
+        <div className="pt-16 pb-6">
+          <img
+            className="rounded-full h-24 w-24 mx-auto mb-4"
+            src="/src/assets/logo.jpg"
+            alt="logo"
+          />
+          <h1 className="font-rob font-bold text-5xl">NotesClub</h1>
+          <h5 className="text-xl m-3">A Study Material Sharing Platform</h5>
         </div>
         <div>
           <input
@@ -30,7 +34,7 @@ const Body = () => {
             value={search}
             onChange={handleChange}
           />
-          <SearchResultList result={result} />
+          <SearchResultList result={result} search={search} />
         </div>
       </section>
     </>

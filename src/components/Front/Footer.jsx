@@ -7,7 +7,11 @@ const Footer = () => {
         <div className="flex justify-around ">
           <div>
             <h1 className="p-4 font-light text-2xl tracking-[0.5rem]">ABOUT</h1>
-            <img className="w-52 h-11 my-4" src="./logo.png" alt="" />
+            <img
+              className=" rounded-full w-16 h-16 my-4 "
+              src="/src/assets/logo.jpg"
+              alt=""
+            />
             <p className="font-light text-sm my-5">
               Ring Road Mall, Plot No. 21, Managlam Place,
               <br /> Sector-3 Rohini, Delhi-110085
