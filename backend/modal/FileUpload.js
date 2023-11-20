@@ -19,6 +19,12 @@ const fileUploadSchema = new Schema({
   pdf: {
     type: String,
   },
+  pdfID: {
+    type: String,
+  },
+  pdfUrl: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("uploadNotes", fileUploadSchema);
