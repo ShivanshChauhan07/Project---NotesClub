@@ -9,25 +9,25 @@ const Header = () => {
       </div>
       <div className="options h-14 my-auto text-md font-normal  tracking-wide">
         <ul className="flex p-4 ">
-          <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
+          <li className="mx-6 py-1 transition-colors hover:text-[#f8b40e] hover:cursor-pointer hover:bg-[#161b21] rounded-md">
             <Link to={"/"}>Home</Link>
           </li>
-          <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
+          <li className="mx-6 py-1 transition-colors hover:text-[#f8b40e] hover:cursor-pointer  hover:bg-[#161b21] rounded-md">
             DashBoard
           </li>
-          <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
+          <li className="mx-6 py-1 transition-colors hover:text-[#f8b40e] hover:cursor-pointer hover:bg-[#161b21] rounded-md">
             <Link to={"/contribute"}>Uploads</Link>
           </li>
-          <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
+          <li className="mx-6 py-1 transition-colors hover:text-[#f8b40e] hover:cursor-pointer hover:bg-[#161b21] rounded-md">
             Favourites
           </li>
-          <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
+          <li className="mx-6 py-1 transition-colors hover:text-[#f8b40e] hover:cursor-pointer hover:bg-[#161b21] rounded-md">
             Top Contributors
           </li>
-          <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
+          <li className="mx-6 py-1 transition-colors hover:text-[#f8b40e] hover:cursor-pointer hover:bg-[#161b21] rounded-md">
             <Link to={"/contact"}>Contact Us</Link>
           </li>
-          <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
+          <li className="mx-6 py-1 transition-colors hover:text-[#f8b40e] hover:cursor-pointer hover:bg-[#161b21] rounded-md">
             <Link to={"/about"}>About Us</Link>
           </li>
         </ul>
