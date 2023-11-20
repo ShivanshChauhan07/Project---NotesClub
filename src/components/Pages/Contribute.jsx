@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, json } from "react-router-dom";
+import { Form, Link, json } from "react-router-dom";
 import Data from "../../assets/Data";
 import { createRef } from "react";
 export const Contribute = () => {
@@ -76,6 +76,9 @@ export const Contribute = () => {
           })}
         </select>
         <input type="file" name="avatar" ref={fileInput} />
+        <button>
+          <Link to={"/"}>Cancel</Link>
+        </button>
         <button type="submit">Submit</button>
       </form>
     </div>
