@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "../Front/Header";
 export const Notes = () => {
   const { name } = useParams();
@@ -23,6 +23,7 @@ export const Notes = () => {
   return (
     <div>
       <Header />
+      <Link to={"/Contribute"}>Contribute</Link>
       <div className="flex">
         {notesData.map((note) => {
           return (

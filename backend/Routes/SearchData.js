@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const notes = require("../Notes");
+const notes = require("../modal/Notes");
 
 router.get("/query", async (req, res) => {
   const { search } = req.query;

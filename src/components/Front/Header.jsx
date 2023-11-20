@@ -16,7 +16,7 @@ const Header = () => {
             DashBoard
           </li>
           <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
-            Uploads
+            <Link to={"/contribute"}>Uploads</Link>
           </li>
           <li className="mx-6 transition-colors hover:text-[#f8b40e] hover:cursor-pointer">
             Favourites
