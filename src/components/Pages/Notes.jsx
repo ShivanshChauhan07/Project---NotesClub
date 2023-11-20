@@ -25,7 +25,9 @@ export const Notes = () => {
   return (
     <div>
       <Header />
-
+      <button className="border-2 border-slate-100 p-3 bg-green-500 text-white rounded-md">
+        Contribute
+      </button>
       <div className=" flex flex-wrap justify-evenly gap-5 content-evenly my-10 ">
         {notesData.map((note, index) => {
           return (
