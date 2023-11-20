@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "../Front/Header";
+import Cards from "./Cards";
 export const Notes = () => {
   const { name } = useParams();
   const [notesData, setNotesData] = useState([]);
@@ -16,6 +17,7 @@ export const Notes = () => {
     );
     response = await response.json();
     setNotesData(response);
+    console.log(notesData);
   };
   useEffect(() => {
     loadData();
@@ -23,15 +25,13 @@ export const Notes = () => {
   return (
     <div>
       <Header />
-      <Link to={"/Contribute"}>Contribute</Link>
-      <div className="flex">
-        {notesData.map((note) => {
+
+      <div className=" flex flex-wrap justify-evenly gap-5 content-evenly my-10 ">
+        {notesData.map((note, index) => {
           return (
-            <div key={note._id} className="h-2/6 w-2/5">
-              <h2>Title {note.title}</h2>
-              <p>Description {note.description}</p>
-              <p>Uploaded On {note.date.slice(0, 10)}</p>
-            </div>
+            index > 1 && (
+              <Cards key={note.documents__data__document_id} note={note} />
+            )
           );
         })}
       </div>
