@@ -45,7 +45,7 @@ const Cards = ({ note }) => {
           <p className="my-3 mx-2 flex justify-between">
             <span className="font-semibold">File Size:</span>
             <span className="pr-4">
-              {(note.documents__data__document_size / 1000000).toFixed(2)}
+              {(note.documents__data__document_size / 1000000).toFixed(2)}MB
             </span>
           </p>
           <p className="my-3 mx-2 flex justify-between">
@@ -60,9 +60,11 @@ const Cards = ({ note }) => {
           </p>
         </div>
         <div className="flex justify-between mt-6 px-2">
-          <p className="my-auto">100 Views</p>
+          <button className=" border-2 border-slate-100 p-2 bg-slate-900 text-white rounded-md">
+            Preview
+          </button>
           <button className="border-2 border-slate-100 p-2 bg-slate-900 text-white rounded-md">
-            Details
+            Download
           </button>
         </div>
       </div>
